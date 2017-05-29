@@ -16,31 +16,55 @@
             <section data-bespoke-backdrop="emphatic" class="emphatic-text">
                 <h1>TKPPL Story</h1>
             </section>
-      
+            
             <section data-bespoke-backdrop="emphatic" class="emphatic-text">
-                <form>
+                <h2>Tugas Akhir TKPPL</h2>
+                <h4>ANGGOTA:</h4>
+                <p>Anthony Ricardo - 151113110</p>
+                <p>Erick Kwantan - 151110091</p>
+                <p>Benny wijaya - 151110245</p>
+                <p>Calvin - 151110032</p>
+            </section>
+            
+            <section data-bespoke-backdrop="emphatic" class="emphatic-text">
+                <div class="alert alert-danger" id="popOut">
+                    username can't be empty !!!
+                </div>
+               <h2>Please enter your name to continue</h2>
+                <br><br>
+                <form class="form-horizontal" id="userData">
                     <div class="form-group">
-                        <label>Nama Pengguna: </label>
-                        <input class="form-control"type="text" placeholder="nama pengguna">
+                        <label class="control-label col-sm-3" for="username">username:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                        </div>
                     </div>
-                    <button class="btn btn-success">Submit</button>
+                    <div class="form-group">
+                        <a href="story.html" class="btn btn-success" id="submit">
+                            Submit
+                        </a>
+                    </div>
                 </form>
             </section>
-
-            <section>
-                <h2>Keyboard Interaction</h2>
-                <form action="api/upload.php" method="post" enctype="multipart/form-data">
-                    <input type="text" name="nama">
-                    <input class="form-control" type="file" name="fileToUpload" id="fileToUpload">
-                    <input class="btn btn-success" type="submit" value="Upload Image" name="submit">
-                </form>
-                <h3>Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a></h3>
-            </section>
-
         </article>
     </body>
 
     <script src="build/js/build.js"></script>
     <script src="build/js/jquery.min.js"></script>
     <script src="build/js/bootstrap.min.js"></script>
+    
+    
+    <script>
+         $(document).ready(function () {
+             $("#submit").click(function() {
+                var userID =  $.trim($("#username").val());
+                if(userID.length == 0) { 
+                    $("#popOut").fadeIn("300").delay(2000);
+                    $("#popOut").fadeOut("300");
+                    return false;
+                }
+                 return true;
+            });
+         });
+    </script>
 </html>
