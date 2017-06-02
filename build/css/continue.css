@@ -1,0 +1,8 @@
+.bespoke-parent {
+    background: url("../img/bg.jpg");
+    background-size: cover;
+}
+
+.bespoke-slide {
+    background-color: transparent;
+}
