@@ -14,5 +14,5 @@ if(isset($_POST["submit"]))
     }
 
     $_SESSION["namaUser"] = $namaUser;
-    $global->redirectToRoute('#3');
+    $global->redirectToRoute('', '/story.html');
 }

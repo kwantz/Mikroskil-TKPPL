@@ -12,10 +12,10 @@ class GlobalCtrl
 
     function redirectToRoute($page, $namaRoute = "homepage") 
     {
-        if($namaRoute == "homepage"){
-            return header("Location: http://" . $this->getDomainUrl() . $page);}
-        else 
-            return header("Location: http://" . $this->getDomainUrl() . "example.php/" . $page );
+        if($namaRoute == "homepage")
+            return header("Location: http://" . $this->getDomainUrl() . $page);
+        else
+            return header("Location: http://" . $this->getDomainUrl() . $namaRoute . $page );
     }
 
     function simpanGambar($tmpName, $namaFile)
@@ -44,7 +44,9 @@ class GlobalCtrl
 
     function findUser($nama)
     {
-        $query = "SELECT * FROM users WHERE nama=" . $nama;
+        $nama = "'" . strtolower($nama) . "'";
+        $query = "SELECT * FROM TKPPL.users WHERE nama=" . $nama;
+
         return $this->openDB()->query($query);
     }
 
@@ -57,25 +59,16 @@ class GlobalCtrl
         $conn = $this->openDB();
         $query = "SELECT (id) FROM TKPPL.users WHERE nama='" . $nama . "'";
 
-        var_dump($nama);
         $result = $conn->query($sql);
         if($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 $idUser = $row['id'];
-                var_dump($row['id'] . ' ' . $row['nama'] . ' ' . $row['terakhir_aktif']);
-                die;
             }
         }
-        var_dump($conn->error); 
-        var_dump($result->num_rows);
-        var_dump($nama);
-        die;
         $query = "INSERT INTO TKPPL.foto (id_user, lokasi_foto) VALUES ('" . $idUser . "', '" . $lokasi . "')";
         
         $conn->query($query);
 
-        var_dump($conn->error);
-        // die;
         $conn->close();
     }
 
