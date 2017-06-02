@@ -119,6 +119,21 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
-h2 {
-  color: #00f;
+* {
+  color: white;
+}
+
+/* custom css */
+
+.bespoke-parent {
+    background: url("../img/nature.jpg");
+    background-size: cover;
+}
+
+.bespoke-slide {
+    background-color: transparent;
+}
+
+#popOut {
+    display:none;   
 }
