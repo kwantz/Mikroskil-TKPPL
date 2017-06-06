@@ -39,6 +39,7 @@ class GlobalCtrl
     function setUser($nama, $tgl) 
     {
         $query = "INSERT INTO TKPPL.users (nama, terakhir_aktif) VALUES ('" . $nama . "', '" . $tgl . "')";
+
         return $this->openDB()->query($query);
     }
 
@@ -47,7 +48,7 @@ class GlobalCtrl
         $nama = "'" . strtolower($nama) . "'";
         $query = "SELECT * FROM TKPPL.users WHERE nama=" . $nama;
 
-        return $this->openDB()->query($query);
+        return $this->openDB()->query($query)->num_rows ;
     }
 
 /// Method Untuk Table Foto
@@ -59,7 +60,7 @@ class GlobalCtrl
         $conn = $this->openDB();
         $query = "SELECT (id) FROM TKPPL.users WHERE nama='" . $nama . "'";
 
-        $result = $conn->query($sql);
+        $result = $conn->query($query);
         if($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 $idUser = $row['id'];
