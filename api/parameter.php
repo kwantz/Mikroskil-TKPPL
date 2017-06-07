@@ -2,9 +2,9 @@
 
 class parameter 
 {
-    public $servername = "localhost";
+    public $servername = "tkppl.com";
     public $username = "root";
-    public $password = "";
+    public $password = "kwantantz123";
 }
 
 
