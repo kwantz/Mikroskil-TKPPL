@@ -10,7 +10,7 @@ if(isset($_POST["submit"]))
     $namaUser = $_POST["namaUser"];
 
     if(!$global->findUser($namaUser)) {
-        $global->setUser(strtolower($namaUser), date("Y-m-d h:i:s"));
+        $global->setUser(strtolower($namaUser));
     }
 
     $_SESSION["namaUser"] = $namaUser;
