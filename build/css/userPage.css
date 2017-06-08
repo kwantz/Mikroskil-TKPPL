@@ -119,21 +119,74 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
-* {
-  color: white;
+h2 {
+  color: #00f;
 }
 
-/* custom css */
-
-.bespoke-parent {
-    background: url("../img/nature.jpg");
+div.friend-list {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 100px;
+    overflow: scroll;
+    
+}
+body {
+    background-image: url(../img/Space-Abstract-Sunrise-1366x768.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
-
-.bespoke-slide {
-    background-color: transparent;
+a.list-group-item {
+    overflow: hidden;
+    transition: 0.5s;
+    opacity: 0.8;
 }
-
-#popOut {
-    display:none;   
+a.usr-img {
+    position: relative;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    display: inline-block;
+}
+a.usr-img img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 10px solid cyan;
+    transition: 0.5s;
+}
+a.usr-img:hover img{
+    opacity: 0.2;
+}
+a.usr-img:hover p {
+    opacity: 1;
+}
+a.usr-img p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20pt;
+    opacity: 0;
+    transition: 0.5s;
+}
+a.list-group-item:hover {
+    opacity: 1;
+}
+img.friend-Badge {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 4px dashed darkblue;
+}
+div.usr-header {
+    margin: 70px;
+}
+div.usr-header h1, div.usr-header h3 {
+    color: white;
+    text-align: center;
+}
+div.info {
+    margin-left: 20px;
 }
