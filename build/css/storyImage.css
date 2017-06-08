@@ -1,0 +1,13 @@
+section img {
+    object-fit: cover;
+    height: 400px;
+}
+
+#backButton {
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.bespoke-slide {
+   background-color: white;
+}

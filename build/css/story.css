@@ -1,0 +1,43 @@
+* {
+    color:black;
+}
+
+#story img {
+    object-fit: cover;
+}
+
+#story img,#story a {
+    width: 100px;
+    height: 100px;
+}
+
+#story a {
+    display:inline-block;
+    text-decoration: none;
+}
+
+#story a:visited {
+     display: none;
+}
+
+.bespoke-parent {
+    background: url("../img/homepage1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.bespoke-slide {
+    background-color: transparent;
+}
+
+#story a h1 {
+    color:white;
+    font-size: 80px;
+    border: 2px solid transparent;
+    border-radius: 100%;
+    background-color: deeppink;
+}
+
+h3 {
+    font-family:sans-serif;
+}
