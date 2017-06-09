@@ -126,9 +126,9 @@ h2 {
 div.friend-list {
     margin: 0 auto;
     width: 100%;
-    margin-top: 100px;
-    overflow: scroll;
-    
+    margin-top: 50px;
+    overflow-y: scroll;
+    height: 254px;
 }
 body {
     background-image: url(../img/Space-Abstract-Sunrise-1366x768.jpg);
@@ -149,8 +149,8 @@ a.usr-img {
     display: inline-block;
 }
 a.usr-img img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 100px;
     border: 10px solid cyan;
     transition: 0.5s;
@@ -167,7 +167,7 @@ a.usr-img p {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 20pt;
+    font-size: 15pt;
     opacity: 0;
     transition: 0.5s;
 }
@@ -181,11 +181,27 @@ img.friend-Badge {
     border: 4px dashed darkblue;
 }
 div.usr-header {
-    margin: 70px;
+    margin: 50px;
 }
 div.usr-header h1, div.usr-header h3 {
+    
+}
+div.usr-header h3 {
+    display: inline-block;
+    margin: 10px;
+}
+div.usr-header div.vertical-line {
+    display: inline-block;
+    width: 1px;
+    height: 40px;
+    border: 1px solid white;
+    vertical-align: middle;
+}
+div.usr-info {
     color: white;
     text-align: center;
+    width: 600px;
+    margin: 0 auto;
 }
 div.info {
     margin-left: 20px;
