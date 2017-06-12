@@ -3,11 +3,26 @@ section img {
     height: 400px;
 }
 
-#backButton {
-    margin-top: 3%;
-    margin-left: 3%;
+div {
+   background-color: transparent;
 }
-
-.bespoke-slide {
-   background-color: white;
+article {
+    background-color: black;
+}
+#backButton {
+    margin-top: 10px;
+}
+h1.friend-Badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 4px dashed darkblue;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding-top: 7px;
+    font-weight: bold;
+    color: white;
+    background: deeppink;
+    font-size: 25px;
 }

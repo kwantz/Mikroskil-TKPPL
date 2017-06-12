@@ -6,7 +6,7 @@
     object-fit: cover;
 }
 
-#story img,#story a {
+.friend-story img,.friend-story h1.logo {
     width: 100px;
     height: 100px;
 }

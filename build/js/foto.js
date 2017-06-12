@@ -10,7 +10,7 @@ $.ajax({
         $html = "";
         $html = "" +
             "<div class='bespoke-theme-cube-slide-parent'><section data-bespoke-backdrop='emphatic' class='emphatic-text bespoke-slide bespoke-active' style='zoom: 0.7875;'>" +
-                "<a href='story.html' class='btn btn-success' id='backButton'>Back To Homepage</a>" +
+                "<a href='story.php' class='btn btn-success' id='backButton'>Back To Homepage</a>" +
                 "<br>" +
                 "<img src='build/img/jack.jpg'>" +
             "</section></div>" +

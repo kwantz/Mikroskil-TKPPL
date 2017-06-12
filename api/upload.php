@@ -16,7 +16,7 @@ if(isset($_POST["submit"]))
     if($check !== false) {
         if( $global->simpanGambar($_FILES["fileToUpload"]["tmp_name"], $namaFile) ) {
             $global->setFoto($_SESSION["namaUser"], $namaFile);
-            $global->redirectToRoute('#2', "/story.html");
+            $global->redirectToRoute('#2', "/story.php");
             exit();
         } else {
             // Gagal Upload

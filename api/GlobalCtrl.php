@@ -53,15 +53,32 @@ class GlobalCtrl
 
     function getRecentUser()
     {
-        $query = "SELECT * FROM TKPPL.users ORDER BY terakhir_aktif DESC LIMIT 4";
+        $query = "SELECT * FROM TKPPL.users ORDER BY terakhir_aktif DESC LIMIT 5";
 
         $i = 0;
         $result = $this->openDB()->query($query);
         if($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $arr[] = $row['nama'];
+                $arr[$i]['idx'] = 0;
+                $arr[$i]['id'] = $row['id'];
+                $arr[$i]['nama'] = $row['nama'];
+                $arr[$i++]['tgl'] = round((strtotime(date('Y-m-d H:i:s')) - strtotime($row['terakhir_aktif']))  / 60.2);
             }
         }
+        $k = 0;
+        for($j=0 ; $j<$i; $j++) {
+            $query = "SELECT * FROM TKPPL.foto WHERE id_user='" . $arr[$j]['id'] . "'";
+            
+            $hasil = $this->openDB()->query($query);
+            if($hasil->num_rows > 0) {
+                $arr[$j]['idx'] = $k;
+                while($row = $hasil->fetch_assoc()) {
+                    $foto[$k]['nama'] = $arr[$j]['nama'];
+                    $foto[$k++]['foto'] = $row['lokasi_foto'];
+                }
+            }
+        }
+
         return $arr;
     }
 
@@ -107,10 +124,11 @@ class GlobalCtrl
             
             $hasil = $this->openDB()->query($query);
             if($hasil->num_rows > 0) {
+                $arr[$j]['idx'] = $k;
                 while($row = $hasil->fetch_assoc()) {
-                    $foto[$k]->id = $arr[$j]['id'];
-                    $foto[$k]->nama = $arr[$j]['nama'];
-                    $foto[$k++]->foto = $row['lokasi_foto'];
+                    $foto[$k]['id'] = $arr[$j]['id'];
+                    $foto[$k]['nama'] = $arr[$j]['nama'];
+                    $foto[$k++]['foto'] = $row['lokasi_foto'];
                 }
             }
         }
