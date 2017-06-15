@@ -10,7 +10,7 @@
     </head>
   
     <body>
-        <article>
+        <article id="slide">
             <?php 
                 require("api/foto.php");
                 foreach($arr as $data) {
@@ -34,4 +34,5 @@
     <script src="build/js/jquery.min.js"></script>
     <script src="build/js/bootstrap.min.js"></script>
     <script src="build/js/build.js"></script>
+    <script src="build/js/slide.js"></script>
 </html>
